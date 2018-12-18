@@ -2,4 +2,6 @@
   (name lib)
   (flags (-w -40 -w +26))
   (public_name hello-reason)
-  (libraries console.lib pastel.lib))
+  (preprocess
+    (pps lwt_ppx))
+  (libraries console.lib pastel.lib lwt_ppx re-mongo))

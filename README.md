@@ -13,6 +13,13 @@ You need Esy, you can install the beta using [npm][]:
 
     % npm install -g esy@latest
 
+Or
+    % yarn global add esy@latest
+
+May you want to use vscode, remember to install opam and reasonml tools
+
+% opam install rtop
+
 Then you can install the project dependencies using:
 
     % esy install
