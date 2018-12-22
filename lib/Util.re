@@ -8,15 +8,9 @@ let hello = () =>
     </Pastel>
   );
 
-/*let start = () => Lwt_main.run(addToDB());*/
-
 open Lwt;
-/* open Lwt.Infix */
 open Cohttp;
-/* open Cohttp_lwt; */
 open Cohttp_lwt_unix;
-/* Cohttp_lwt__Body.to_string */
-Cohttp_lwt.Body.to_string;
 
 let callback = (_conn, req, body) => {
   let uri = req |> Request.uri |> Uri.to_string;
@@ -46,11 +40,20 @@ let callback = (_conn, req, body) => {
      ) */
 };
 
-/* let s = Server.make(~callback, ()); */
 let server =
   Server.create(~mode=`TCP(`Port(8000)), Server.make(~callback, ()));
-/* let mode = Cohttp_lwt.Make_server. */
-/* let server = Server.create(s); */
-
 /* let () = ignore(Lwt_main.run(server)); */
 let start = () => Lwt_main.run(server);
+
+let test = () => {
+  let str = {|
+  {
+    "year": 2018,
+    "month": 12,
+    "day": 2
+  }
+  |};
+  let js = Proto.Proto_j.date_of_string(str);
+  /* print_endline (Yojson.Safe.prettify (js)) */
+  print_endline(string_of_int(js.year));
+};

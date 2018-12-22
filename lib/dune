@@ -1,7 +1,7 @@
 (library
   (name lib)
   (flags (-w -40 -w +26))
-  (public_name hello-reason)
+  ; (public_name hello-reason)
   (preprocess
     (pps lwt_ppx))
-  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo))
+  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo yojson atdgen proto))

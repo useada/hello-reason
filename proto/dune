@@ -1,0 +1,7 @@
+(library
+  (name proto)
+  (flags (-w -40 -w +26))
+  ; (public_name proto)
+  (preprocess
+    (pps lwt_ppx))
+  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo yojson atdgen))
