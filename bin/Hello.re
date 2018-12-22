@@ -1,4 +1,4 @@
-Console.log("Running Test Program:");
+Console.log("98k server rock and roll");
 /* let () = print_endline(Lib.Util.hello()); */
 
-let _ = Lib.Util.start();
+ /*let _ = Lib.Util.start();*/
