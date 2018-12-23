@@ -1,5 +1,27 @@
-type date = {
-  year : int;
-  month : int;
-  day : int;
+(*
+type request = {
 }
+*)
+
+type response = {
+  code: int;
+  message: string;
+}
+
+type reqGetLoginCode = {
+  phone: string;
+}
+
+type resGetLoginCode = {
+  inherit  response;
+  loginCode: string;
+}
+
+type reqLogin = {
+  phone: string;
+}
+
+type resLogin = {
+  inherit  response;
+}
+
