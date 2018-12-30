@@ -11,9 +11,8 @@ module User = {
   };
 };
 
-let makeUser = (phone, email, nickname, createTime, updateTime) => {
-User.{id: "", phone, email, nickname, createTime, updateTime}
-}
+let makeUser = (phone, email, nickname, createTime, updateTime) =>
+  User.{id: "", phone, email, nickname, createTime, updateTime};
 
 let userFromDoc = doc => {
   let u = doc;
