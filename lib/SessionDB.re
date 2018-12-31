@@ -65,3 +65,35 @@ let getSessionByToken = token => {
     Lwt.return(Some(session));
   };
 };
+
+let redisLwt = (host, port) =>
+  Redis_lwt.Client.
+    /* open Lwt.Infix; */
+    /* let print_value =
+       fun
+       | `Bulk(Some(str)) => Lwt_io.printf("%s ", str)
+       | `Error(str) => Lwt_io.printf("error: %s ", str)
+       | `Status(str) => Lwt_io.printf("status: %s ", str)
+       | `Int(i) => Lwt_io.printf("int: %d ", i)
+       | _ => Lwt.return(); */
+    /* let print_stream_value = v => {
+         Lwt_list.iter_s(print_value, v);
+         Lwt_io.printf("%s", "\n");
+         Lwt_io.flush(Lwt_io.stdout);
+       }; */
+    (
+      Lwt_main.run(
+        {
+          let%lwt conn = connect({host, port});
+          let%lwt r = incr(conn, "test_key");
+          Lwt_io.printf("incr:%d", r);
+          Lwt_io.flush(Lwt_io.stdout);
+        },
+      )
+    );
+/* Lwt_unix.run(Lwt_stream.iter_s(print_stream_value, stream(conn))); */
+/* let t = connect({host=host, port=port})
+           >>= (fun(conn)-> subscribe(conn,["example"]); return conn)
+           >>= (fun(conn)-> Lwt_stream.iter_s(print_stream_value,(stream,conn)));
+   Lwt_unix.run(t);
+   () */

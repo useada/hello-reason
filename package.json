@@ -20,16 +20,18 @@
     "@opam/dune": "*",
     "@opam/lwt": "4.1.0",
     "@opam/lwt_ppx": "1.2.1",
+    "@opam/redis": "0.3.6",
+    "@opam/redis-lwt": "0.3.6",
     "@reason-native/console": "*",
     "@reason-native/pastel": "*",
     "@reason-native/rely": "*",
     "ocaml": "~4.6.0",
-    "re-mongo": "*",
+    "re-mongo": "github:useada/re-mongo#v0.1.0",
     "refmterr": "*"
   },
   "resolutions": {
     "@esy-ocaml/reason": "anmonteiro/reason#anmonteiro/dune-1.4",
-    "re-mongo": "useada/re-mongo#master"
+    "re-mongo": "useada/re-mongo#v0.1.0"
   },
   "devDependencies": { "@opam/merlin": "*", "ocaml": "~4.6.0" }
 }

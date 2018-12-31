@@ -4,4 +4,4 @@
   ; (public_name hello-reason)
   (preprocess
     (pps lwt_ppx))
-  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo yojson atdgen proto))
+  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo yojson atdgen proto redis-lwt))
