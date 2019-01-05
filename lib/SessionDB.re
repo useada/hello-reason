@@ -86,7 +86,7 @@ let redisLwt = (host, port) =>
         {
           let%lwt conn = connect({host, port});
           let%lwt r = incr(conn, "test_key");
-          Lwt_io.printf("incr:%d", r);
+          let _ = Lwt_io.printf("incr:%d", r);
           Lwt_io.flush(Lwt_io.stdout);
         },
       )

@@ -3,5 +3,5 @@
   (flags (-w -40 -w +26))
   ; (public_name hello-reason)
   (preprocess
-    (pps lwt_ppx))
-  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo yojson atdgen proto redis-lwt))
+    (pps ppx_deriving_yojson lwt_ppx))
+  (libraries console.lib pastel.lib lwt_ppx cohttp cohttp-lwt-unix re-mongo yojson atdgen proto redis-lwt ppx_deriving_yojson.runtime))

@@ -25,3 +25,11 @@ type resLogin = {
   inherit  response;
 }
 
+type session = {
+  token: string;
+  uid: string;
+  createTime: int;
+  expireTime: int;
+  loginCode: string;
+}
+

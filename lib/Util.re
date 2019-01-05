@@ -16,7 +16,7 @@ let callback_get_login_code = (req, body) => {
   /* let headers = req |> Request.headers |> Header.to_string; */
   let%lwt bodyStr = body |> Cohttp_lwt.Body.to_string;
   let req = Proto.Proto_j.reqGetLoginCode_of_string(bodyStr);
-  let phone = req.phone;
+  /* let phone = req.phone; */
   let res: Proto.Proto_j.resGetLoginCode = {
     code: 0,
     message: "success",
